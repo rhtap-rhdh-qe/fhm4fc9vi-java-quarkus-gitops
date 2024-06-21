@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fhm4fc9vi-java-quarkus-gitops
+  description: This is GitOps manifest for fhm4fc9vi-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fhm4fc9vi-java-quarkus
+    janus-idp.io/tekton: fhm4fc9vi-java-quarkus 
+    backstage.io/kubernetes-id: fhm4fc9vi-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fhm4fc9vi-java-quarkus
